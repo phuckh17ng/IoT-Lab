@@ -6,10 +6,9 @@ import time
 import json
 
 
-
 BROKER_ADDRESS = "demo.thingsboard.io"
 PORT = 1883
-THINGS_BOARD_ACCESS_TOKEN = "F7Z8ZxxAm9g8CpwX9pzJ"
+THINGS_BOARD_ACCESS_TOKEN = ""
 
 
 def subscribed(client, userdata, mid, granted_qos):
@@ -51,8 +50,7 @@ humi = 50
 light_intesity = 100
 counter = 0
 
-Nomi_locator = Nominatim(user_agent="My App")
-my_location= geocoder.ip('me')
+my_location = geocoder.ip('me')
 
 latitude= my_location.geojson['features'][0]['properties']['lat']
 longitude = my_location.geojson['features'][0]['properties']['lng']

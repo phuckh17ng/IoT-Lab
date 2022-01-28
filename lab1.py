@@ -1,6 +1,5 @@
 print("Xin chào ThingsBoard")
 import paho.mqtt.client as mqttclient
-from geopy.geocoders import Nominatim
 import geocoder
 import time
 import json
@@ -50,10 +49,11 @@ humi = 50
 light_intesity = 100
 counter = 0
 
-my_location = geocoder.ip('me')
+#lấy địa chỉ hiện tại thông qua địa chỉ IP
+my_location = geocoder.ip('me') 
 
-latitude= my_location.geojson['features'][0]['properties']['lat']
-longitude = my_location.geojson['features'][0]['properties']['lng']
+latitude= my_location.lat
+longitude = my_location.lng
 
 while True:
     collect_data = {'temperature': temp, 'humidity': humi, 'light':light_intesity,'latitude':latitude, 'longitude':longitude}
